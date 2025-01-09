@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "sender": "Leo eka matra",
+      "message": "Hello, apa kabarmu?",
+      "timestamp": "2025-01-08 10:00:00"
+    },
+    {
+      "id": 2,
+      "sender": "Moh Naufal",
+      "message": "Bisa kita bertemu besok?",
+      "timestamp": "2025-01-08 11:00:00"
+    }
+  ]
