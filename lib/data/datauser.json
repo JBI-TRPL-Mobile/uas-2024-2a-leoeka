@@ -1,7 +1,7 @@
 {
     "id": 1,
     "name": "Leo eka matra",
-    "email": "leo@example.com",
+    "email": "leo@gmail.com",
     "password": "123456",
     "categories": ["Development", "IT & Software", "Business"],
     "top_courses": ["Flutter Basics", "Advanced Flutter"]

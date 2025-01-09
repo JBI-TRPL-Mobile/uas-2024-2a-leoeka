@@ -1,68 +1,61 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text("Sign In"),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Sign In",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            // Email input
+            const Text("Email"),
             TextField(
               controller: emailController,
               decoration: const InputDecoration(
-                labelText: "Email",
-                border: OutlineInputBorder(),
+                hintText: "Enter your email",
               ),
             ),
             const SizedBox(height: 16),
-            // Password input
+            const Text("Password"),
             TextField(
               controller: passwordController,
               obscureText: true,
               decoration: const InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder(),
+                hintText: "Enter your password",
               ),
             ),
-            const SizedBox(height: 20),
-            // Sign In button
-            ElevatedButton(
-              onPressed: () {
-                // Add login logic here
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Logged in successfully")),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
+            const SizedBox(height: 24),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Simulasi pengambilan data untuk userName dan userEmail
+                  String userName = "William"; // Anda dapat mengambil nama pengguna dari server atau form lain
+                  String userEmail = emailController.text;
+
+                  // Navigasi ke HomeScreen setelah login berhasil
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(
+                        userName: userName,
+                        userEmail: userEmail,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text("Sign In"),
               ),
-              child: const Text("Sign In"),
-            ),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
-                // Add "Forgot Password?" logic here
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Forgot Password tapped")),
-                );
-              },
-              child: const Text("Forgot Password?"),
             ),
           ],
         ),

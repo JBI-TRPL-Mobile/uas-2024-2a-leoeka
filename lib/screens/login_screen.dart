@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
 
               // Title or welcome text
               const Text(
-                "Welcome to the App",
+                "Selamat datang di aplikasi",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
