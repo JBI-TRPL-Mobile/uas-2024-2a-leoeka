@@ -10,5 +10,11 @@
       "sender": "Moh Naufal",
       "message": "Bisa kita bertemu besok?",
       "timestamp": "2025-01-08 11:00:00"
-    }
+    },
+    {
+        "id": 3,
+        "sender": "Dwi Handoko",
+        "message": "Selamat pagi!",
+        "timestamp": "2025-01-08 08:00:00"
+      }
   ]

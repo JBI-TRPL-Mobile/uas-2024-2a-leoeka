@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profile_screen.dart'; // Impor ProfileScreen
+import 'message_screen.dart'; // Impor MessageScreen
 
 // Model User
 class User {
@@ -168,9 +169,14 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             IconButton(
-              icon: const Icon(Icons.search),
+              icon: const Icon(Icons.message), // Ikon pesan
               onPressed: () {
-                // Handle Search button
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MessageScreen(),
+                  ),
+                );
               },
             ),
             IconButton(
@@ -182,7 +188,6 @@ class HomeScreen extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () {
-                // Navigasi ke halaman Profil dan kirim data user
                 Navigator.push(
                   context,
                   MaterialPageRoute(

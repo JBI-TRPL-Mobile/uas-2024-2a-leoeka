@@ -4,6 +4,18 @@
 
 A new Flutter project.
 
+## 362358302003
+
+## ss project uas 
+
+## ![alt text](<Screenshot 2025-01-09 164517.png>) tampilan halaman login 
+## ![alt text](<Screenshot 2025-01-09 164524.png>) tampilan sign in
+## ![alt text](<Screenshot 2025-01-09 164541.png>) tampilan sign up
+## ![alt text](<Screenshot 2025-01-09 164603.png>) tampilan home
+## ![alt text](<Screenshot 2025-01-09 164628.png>) tampilan halaman profile
+## ![alt text](<Screenshot 2025-01-09 164635.png>) tampilan halaman log out
+## ![alt text](<Screenshot 2025-01-09 165146.png>) tampilan halaman message 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
