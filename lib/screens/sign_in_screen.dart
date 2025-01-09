@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
+ // Pastikan Anda mengimpor file model User
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -77,14 +78,20 @@ class SignInScreen extends StatelessWidget {
                     String userName = "William";
                     String userEmail = emailController.text;
 
-                    // Navigasi ke HomeScreen setelah login berhasil
+                    // Buat objek User
+                    User user = User(
+                      id: 1,
+                      name: userName,
+                      email: userEmail,
+                      categories: ["Development", "IT & Software", "Business"],
+                      topCourses: ["Flutter Basics", "Advanced Flutter"],
+                    );
+
+                    // Navigasi ke HomeScreen dengan objek User
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeScreen(
-                          userName: userName,
-                          userEmail: userEmail,
-                        ),
+                        builder: (context) => HomeScreen(user: user),
                       ),
                     );
                   },

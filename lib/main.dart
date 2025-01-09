@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/login_screen.dart';
+import 'package:template_project/screens/login_screen.dart';
+import 'package:template_project/screens/profile_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Wireframe Project',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginScreen(),
+      title: 'Flutter Demo',
+      initialRoute: '/login', // Halaman awal
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/profile': (context) => const ProfileScreen(
+              userName: 'John Doe',
+              userEmail: 'johndoe@example.com',
+            ),
+      },
     );
   }
 }

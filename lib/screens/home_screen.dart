@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart'; // Impor ProfileScreen
+
+// Model User
+class User {
+  final int id;
+  final String name;
+  final String email;
+  final List<String> categories;
+  final List<String> topCourses;
+
+  User({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.categories,
+    required this.topCourses,
+  });
+}
 
 class HomeScreen extends StatelessWidget {
-  final String userName; // Nama pengguna
-  final String userEmail; // Email pengguna
+  final User user;
 
-  // Dummy data for categories and top courses
-  final List<String> categories = [
-    "Development",
-    "IT & Software",
-    "UI/UX",
-    "Business",
-    "Finance & Business",
-    "Personal"
-  ];
-
-  final List<String> topCourses = [
-    "Flutter Basics",
-    "Advanced Flutter",
-    "Web Development",
-    "Python for Beginners"
-  ];
-
-  HomeScreen({
+  const HomeScreen({
     Key? key,
-    required this.userName,
-    required this.userEmail,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -39,7 +38,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 // Welcome message
                 Text(
-                  "Welcome, $userName!",
+                  "Welcome, ${user.name}!",
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -97,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                 Wrap(
                   spacing: 10,
                   runSpacing: 10,
-                  children: categories.map((category) {
+                  children: user.categories.map((category) {
                     return Chip(
                       label: Text(category),
                       backgroundColor: Colors.blue[50],
@@ -119,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                   height: 150, // Height for horizontal scroll
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: topCourses.length,
+                    itemCount: user.topCourses.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 10),
@@ -139,7 +138,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                topCourses[index],
+                                user.topCourses[index],
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(fontSize: 14),
                               ),
@@ -155,7 +154,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-
       // Bottom Navigation Bar
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -184,13 +182,21 @@ class HomeScreen extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () {
-                // Handle Profile button
+                // Navigasi ke halaman Profil dan kirim data user
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(
+                      userName: user.name,
+                      userEmail: user.email,
+                    ),
+                  ),
+                );
               },
             ),
           ],
         ),
       ),
-
       // Floating action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
