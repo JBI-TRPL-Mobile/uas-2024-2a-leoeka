@@ -27,7 +27,7 @@ class SignInScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  "Learn ipsum dolor sit amet, consectetur \nadipiscing elit, sed do",
+                  "Selamat datang di halaman sign-in",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
